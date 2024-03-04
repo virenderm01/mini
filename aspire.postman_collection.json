@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "1c118144-6f06-48fd-9e1b-75bdc56c8319",
+		"name": "aspire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2652600",
+		"_collection_link": "https://warped-shadow-782076.postman.co/workspace/brighttalk~b85e4874-f0fe-4991-9d50-bdc3d8d6590b/collection/2652600-1c118144-6f06-48fd-9e1b-75bdc56c8319?action=share&source=collection_link&creator=2652600"
+	},
+	"item": [
+		{
+			"name": "get_token_with_username_password",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBc3BpcmUiLCJpYXQiOjE3MDk0OTIwODYsImV4cCI6MTcwOTQ5Mjk1MH0.QG8qg-9YDcnnTS05A2p37O_irY4GJmj-DZAMC2t53qeZDqa8cldjlt4OMH2DdDjWXNaEetEOfo160bhPnsmH-g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amountRequired\": 6000,\n  \"loanTerm\": 3\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mini-aspire/v1/loan/application",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mini-aspire",
+						"v1",
+						"loan",
+						"application"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_loan",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzA5NTY1NjQ1LCJleHAiOjE3MDk1NzQyODV9.nRhC8lRQGoJos0_QKsrVLdo9dwJexY8IsUbjjXUNWcY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loanAmount\": 6000,\n  \"loanTerm\": 3\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mini-aspire/api/v1/loan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mini-aspire",
+						"api",
+						"v1",
+						"loan"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "approve_reject_loan_with_admin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhc3BpcmUiLCJpYXQiOjE3MDk1Njg2NzIsImV4cCI6MTcwOTU3NzMxMn0.GWPgzy20ISZAKr9zTjytfIw06ocCymP84d3o02YtxeA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"loanId\": 1,\n  \"approved\": true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mini-aspire/api/v1/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mini-aspire",
+						"api",
+						"v1",
+						"admin"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_loan_by_id_by_user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzA5NTY1NjQ1LCJleHAiOjE3MDk1NzQyODV9.nRhC8lRQGoJos0_QKsrVLdo9dwJexY8IsUbjjXUNWcY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mini-aspire/api/v1/loan/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mini-aspire",
+						"api",
+						"v1",
+						"loan",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "repayment-api",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzA5NTgxMzQyLCJleHAiOjE3MDk1ODk5ODJ9.J1MErkpDLLNflbdZHj-IYRuzcVgsrEqSoQd9MkrUqLQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"loanId\": 3,\n    \"amount\": 4000.0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mini-aspire/api/v1/repayment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mini-aspire",
+						"api",
+						"v1",
+						"repayment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
